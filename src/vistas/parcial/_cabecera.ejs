@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/icon.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/index.css">
+
+    <script src="/js/jquery-3.4.1.slim.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+
+    <title>Martin Medina</title>
+
+</head>
+<body>
+
+
+<% if( usuario) {%>
+
+  <%- include('_navegacion_usuario') %>
+  <%- include('_digitos_cedulas') %>
+  
+  
+  <% } else { %>
+
+    
+<%- include('_navegacion') %>
+
+    <% } %>
+
+<%- include('_mensaje') %>
+
+
+      

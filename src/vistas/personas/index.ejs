@@ -1,0 +1,87 @@
+<%- include('../parcial/_cabecera') %>
+
+<div class="container mt-4 text-center">
+
+<form action="/personas" method="POST" class="mt-3">
+<div class="from-group">
+  <h6><span class="icon-Lupa"></span> persona </h6>
+  <input type="text" class="form-control" name="identificacion" placeholder="Ingrese identificación">
+  <button type="submit" class="btn btn-success bt-sm mt-3">Buscar</button>
+</div>
+</form>
+
+
+</div>
+
+
+  <% if(datos.length >0){ %>
+            
+    <div class="container mt-3 mb-5">
+
+        <div class="row">
+
+            <%for(let dato of datos){%>
+          
+                   <div class="col-md-4">
+                       <div class="card mt-3 text-center mb-5">
+                         <div class="card-header">
+                          <h6><a href="/control/<%= dato.id %>/<%= dato.nombre %>"><%= dato.nombre.toUpperCase()%></a></h6>
+                         </div>
+                        <div class="card-body">
+                                <p>Teléfono: <b><%= dato.telefono %></b> <br>
+                                  Ciudad Residencia: <b><%= dato.ciudad_residencia %></b>
+                                </p>
+                            <a href="/personas/editar/<%= dato.id %>" class="btn btn-secondary btn-sm">Modificar</a>
+                          <!-- <a href="/personas/confirmar_eliminar/<%= dato.id %>/<%= dato.nombre%>" class="btn btn-danger btn-sm">Eliminar</a> -->  
+                        </div>
+                       </div>
+                   </div>
+   
+                   <% } %>
+   
+                   <div class="col-md-3">
+                       <div class="card text-center m-3">
+                        <div class="card-body">
+                            
+                          
+                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#guardar">
+                              <h5>Agregar una persona</h5>
+                              </button>
+
+                        </div>
+                       </div>
+                   </div>
+   
+               </div>
+
+    </div>
+
+   
+
+<% } else { %>
+
+<div class="container mt-5 text-center">
+   <h5>No tiene personas agregadas</h5>
+
+   <button type="button" class="btn btn-success mt-3" data-toggle="modal" data-target="#guardar">
+    Agregar un persona
+   </button>
+ 
+</div>
+
+ <% } %>
+
+
+
+         <div class="modal fade" id="guardar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-body text-center">
+                     
+                    <%- include('guardar') %>   
+        
+                </div>
+              </div>
+            </div>
+          </div>
+

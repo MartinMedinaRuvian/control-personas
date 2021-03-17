@@ -1,0 +1,23 @@
+{
+  "name": "app_control_personas",
+  "version": "1.0.0",
+  "description": "Aplicación web para el control y salida de personas en la San Juana Sardinata",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx nodemon src/app.js"
+  },
+  "author": "Martin de Jesus Medina Ruvian",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-flash": "^0.1.1",
+    "ejs": "^3.0.2",
+    "express": "^4.17.1",
+    "express-mysql-session": "^2.1.4",
+    "express-session": "^1.17.0",
+    "morgan": "^1.10.0",
+    "mysql": "^2.18.1",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0"
+  }
+}

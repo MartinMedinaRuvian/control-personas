@@ -1,0 +1,42 @@
+
+    <% if(correcto.length >0){ %>
+        
+        <div id="mensaje" class="text-center alert alert-success alert-dismissible fade show" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            <%= correcto %>
+          </div>
+
+          <script>
+            setInterval(ocultar, 5000);
+        
+            function ocultar(){
+                $("#mensaje").hide();
+            }
+        </script>
+    
+<% } %>
+
+<% if(incorrecto.length > 0){ %>
+        
+  <div id="mensaje" class="text-center alert alert-danger alert-dismissible fade show" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      <%= incorrecto %>
+    </div>
+
+    <script>
+      setInterval(ocultar, 5000);
+  
+      function ocultar(){
+          $("#mensaje").hide();
+      }
+  </script>
+
+<% } %>
+
+
+
+

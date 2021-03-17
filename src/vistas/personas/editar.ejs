@@ -1,0 +1,32 @@
+<%- include('../parcial/_cabecera') %>
+
+<div class="container mt-5">
+   <div class="row">
+       <div class="col-md-4 mx-auto">
+       <div class="card"> 
+           <div class="card-body text-center">
+               <h4>Modificar Persona</h4>
+               <form action="/personas/editar/<%= dato[0].id %>" method="POST">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="nombre" value="<%= dato[0].nombre %>" autofocus>
+                    </div>
+                    <div class="form-group">
+                    <input type="number" hidden name="identificacion" value="<%= dato[0].identificacion %>">
+                    </div>
+                    <div class="form-group">
+                    <input type="phone" class="form-control" name="telefono" value="<%= dato[0].telefono %>">
+                    </div>
+                    <div class="form-group">
+                     <input type="text" class="form-control" name="ciudad_residencia" value="<%= dato[0].ciudad_residencia %>">
+                    </div>
+              <div class="form-group">
+              <button type="submit" class="btn btn-success form-control">Guardar</button>
+              <a href="/personas" class="btn btn-secondary form-control mt-2">Cancelar</a>
+            </div>
+               </form>
+           </div>
+       </div>
+       </div>
+   </div>
+</div>
+
